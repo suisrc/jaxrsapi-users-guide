@@ -1,5 +1,5 @@
 {
-  "gitbook": "2.x.x",
+  "gitbook": "3.x.x",
   "structure": {
       "readme": "README.adoc"
   },
@@ -14,7 +14,7 @@
   "pluginsConfig": {
           "edit-link": {
              "base": "https://github.com/suisrc/jaxrsapi-users-guide/tree/master/",
-             "label": "编辑该页"
+             "label": "编辑"
           },
           "addcssjs": {
               "css": ["/styles/asciidoc.css"]
@@ -26,10 +26,7 @@
   "variables": {
       "javadoc_url_preffix" : "http://suisrc.github.io/weixin-api/",
       "versions": {
-          "wildfly": "10.1.0.Final",
-          "swarm": "2017.6.0-SNAPSHOT",
-          "configuration": "1.0.2.Final",
-          "keycloak": "2.5.0.Final"
+          "wildfly": "10.1.0.Final"
       }
   }
 
