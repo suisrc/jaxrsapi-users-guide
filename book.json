@@ -1,0 +1,36 @@
+{
+  "gitbook": "23.x.x",
+  "structure": {
+      "readme": "README.adoc"
+  },
+  "plugins": [
+      "ungrey",
+      "splitter",
+      "expandable-chapters",
+      "edit-link",
+      "addcssjs",
+      "ga"
+  ],
+  "pluginsConfig": {
+          "edit-link": {
+             "base": "https://github.com/suisrc/jaxrsapi-users-guide/tree/master/",
+             "label": "编辑该页"
+          },
+          "addcssjs": {
+              "css": ["/styles/asciidoc.css"]
+          },
+          "ga": {
+              "token": "UA-83419890-1"
+          }
+   },
+  "variables": {
+      "javadoc_url_preffix" : "http://suisrc.github.io/weixin-api/",
+      "versions": {
+          "wildfly": "10.1.0.Final",
+          "swarm": "2017.6.0-SNAPSHOT",
+          "configuration": "1.0.2.Final",
+          "keycloak": "2.5.0.Final"
+      }
+  }
+
+}
