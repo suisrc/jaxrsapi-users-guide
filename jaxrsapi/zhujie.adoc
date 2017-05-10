@@ -1,0 +1,17 @@
+= 注解
+
+    框架提供一些接口，用于简化接口的调用。
+    
+    @SystemValue:别该注解标记的参数，会通过接口所属的激活器的getAdapter方法对参数值进行获取，仅当该参数为null时候有效。
+    
+    @ThreadValue:被该注解标记的参数，会通过当前执行的线程上获取参数值，仅当参数为null时候有效。value:检索线程变量时候使用的key, calzz:检索线程变量时候，调用的静态类型，默认为Global.class, method: 检索线程变量时候，使用的方法，默认为getThreadCache。
+    
+    @DefaultValue:被该注解标记的参数，会通过TransformUtils类完成对String类型到对应类型的转换，仅当参数为null时候有效
+    
+    @InterceptParam:被该注解标记的参数，在调用前，拦截，先调用拦截器，把拦截器返回的值，作为最终的参数值，该字段强制生效。value：指定拦截器的类型，master:指定生成拦截器的参数，目前支持:Consts.FIELD_PROXY(接口代理), Consts.FIELD_ACTIVATOR(接口激活器), Consts.FIELD_THIS(本身)。
+    
+    @InterceptResult:被该注解标记的接口，在调用后，拦截，调用拦截器，把拦截器返回的结果，作为最终的参数值，该字段强制生效。value：指定拦截器的类型，master:指定生成拦截器的参数，目前支持:Consts.FIELD_PROXY(接口代理), Consts.FIELD_ACTIVATOR(接口激活器), Consts.FIELD_THIS(本身)。
+     
+    @LogicProxy:被该注解标记的接口，不会远程调用服务器，而是通过标记的本地类，模拟远程访问的结果。value:模拟远程访问的类型, master:指定生成拦截器的参数，目前支持:Consts.FIELD_PROXY(接口代理), Consts.FIELD_ACTIVATOR(接口激活器), Consts.FIELD_THIS(本身)。 method: 模拟访问时候调用的方法，使用的方法，默认为proxy。需要注意的是，默认访问的方法会多一个参数，第一个参数是远程访问的url地址。   
+    
+    @RemoteApi：标记远程访问的API，在自动检索时候使用，如果手动同过激活器指定，可以忽略该注解。
