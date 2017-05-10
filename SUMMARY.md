@@ -1,15 +1,12 @@
 # Summary
 
 * [介绍](README.adoc)
-* [远程访问框架](restfulyuan-cheng-fang-wen-kuang-jia.adoc)
-  * [设计起因](restfulyuan-cheng-fang-wen-kuang-jia/she-ji-qi-yin.adoc)
-  * [框架结构](restfulyuan-cheng-fang-wen-kuang-jia/si-xiang.adoc)
-  * 小结
-* [微信实例](wei-xin-shi-li.adoc)
-  * 核心模块
-  * 公众号模块
-  * 企业号模块
-  * 开发平台模块
-  * 小结
-* 关于作者
+* [远程调用框架](jaxrsapi.adoc)
+  * [特点](jaxrsapi/tedian.adoc)
+  * [激活器](jaxrsapi/jihuoqi.adoc)
+  * [注解](jaxrsapi/jihuoqi.adoc)
+  * [代码生成](jaxrsapi/jihuoqi.adoc)
+  * [http-client修正](jaxrsapi/jihuoqi.adoc)
+* [微信实例](weixin.adoc)
+* [关于作者](me.adoc)
 
