@@ -1,4 +1,4 @@
-#JAXRSAPI
+= JAXRSAPI
 
     JAXRSAPI框架的灵感来源于wildfly-swarm中的cdi-jaxrsapi模块，但是其本质和使用方式是完全不同的，代码动态生成部分我是使用javassist进行了重新设计。但是处于对灵感来源的敬重和理念的相似，所以我使用了相同的名字进行分发。
 
