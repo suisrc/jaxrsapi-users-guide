@@ -1,0 +1,13 @@
+= http-client修正
+
+    本身resteasy提供的底层使用的是httpclient,但是httpclient本身底层是不提供多线程安全的，这样就造成了一个结果，当激活器对多个接口提供统一管理的时候，底层通信就会因为线程问题发生错误。
+    
+    所以jaxrsapi框架在设计的时候，就需要考虑httpclient的线程安全版，其实client底层同时，使用的clienthttpengine只要保证每一个线程具有一个，就可以达到线程安全的目的。同时，httpclient在4.3.6版本结构上发生了很大的变化，所以这里提供了两个不版本的适配。
+    
+    resteasy增加client多线程安全的方式。
+    
+```java
+public static void initHttpEngineThreadSaft(ResteasyClientBuilder that);
+```
+
+    通过该方式就可以对ResteasyClientBuilder所产生的ResteasyClient就有线程安全的特性。
