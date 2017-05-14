@@ -20,3 +20,4 @@ ClientServiceFactory.processIndex(index, (api, impl) -> {
 });
 ```
 
+    以上方式是用wildfly中的创建方式。
