@@ -1,0 +1,22 @@
+= 代码生成
+
+    框架的核心部分，就是代码的自动生成，代码会根据用于提供的接口生成对应的远程访问实现。
+    
+    在整个生成过程中，设计2层代理，其中一层，有resteasy生成，通过ProxyBuilder构建HttpMethod内容。另外一层有ClientServiceFactory生成，主要负责对远程访问前的参数进行初始化和对获取的数据进行格式化处理。
+    
+    接口实现生成需要执行调用，如果本身使用的框架没有jandex支持，需要通过NSCFactory进行手动构建。
+    
+```java
+// 初始化工厂
+NSCFactory.build(MpServerActivator.class);
+```
+
+    如果框架中已经使用了jandex，请使用一下方式构建
+    
+```java
+ClientServiceFactory.processIndex(index, (api, impl) -> {
+	String path = "WEB-INF/classes/" + impl.getName().replace('.', '/') + ".class";
+	jaxrsArchive.add(new ByteArrayAsset(impl.toBytecode()), path);
+});
+```
+
